@@ -1,4 +1,4 @@
-Remove Helvetica Font from Proxmox (Tampermonkey)
+## Remove Helvetica Font from Proxmox (Tampermonkey)
 
 This Tampermonkey userscript removes the Helvetica / Helvetica Neue font from the Proxmox VE web interface by overriding it at the @font-face level and replacing it with system-safe fallback fonts — without breaking Font Awesome icons.
 
