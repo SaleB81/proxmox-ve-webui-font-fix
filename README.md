@@ -2,7 +2,7 @@
 
 This Tampermonkey userscript removes the Helvetica / Helvetica Neue font from the Proxmox VE web interface by overriding it at the @font-face level and replacing it with system-safe fallback fonts — without breaking Font Awesome icons.
 
-🎯 Motivation
+### 🎯 Motivation
 
 Some Proxmox VE installations rely on Helvetica or Helvetica Neue, which can:
 
@@ -14,7 +14,7 @@ Lead to missing or broken icons if removed incorrectly (e.g. via global font-fam
 
 This script solves the problem cleanly and safely.
 
-✅ What this script does
+### ✅ What this script does
 
 Overrides Helvetica and Helvetica Neue only at the @font-face level
 
@@ -30,7 +30,7 @@ Preserves Font Awesome icons (no empty squares, no missing glyphs)
 
 Works without modifying Proxmox source files
 
-❌ What this script does NOT do
+### ❌ What this script does NOT do
 
 Does not globally override font-family via * { font-family: ... }
 
@@ -38,7 +38,7 @@ Does not touch icon fonts (Font Awesome, fa-*)
 
 Does not inject JavaScript logic — CSS only
 
-🧠 Technical approach
+### 🧠 Technical approach
 
 Instead of forcing a different font everywhere, the script:
 
@@ -52,7 +52,7 @@ Maps them to safe local fonts already installed on most systems
 
 This avoids breaking icon fonts, which commonly happens when using aggressive CSS overrides.
 
-📜 Script metadata
+### 📜 Script metadata
 
 Type: Tampermonkey userscript
 
@@ -62,7 +62,7 @@ Scope: Proxmox VE Web UI
 
 CSS injection method: <style> element
 
-🛠 Installation
+### 🛠 Installation
 
 Install Tampermonkey (or compatible userscript manager)
 
@@ -74,7 +74,7 @@ Adjust the @match line if needed (see below)
 
 Save and refresh the Proxmox UI
 
-🌍 URL matching
+### 🌍 URL matching
 
 Note: 
 
@@ -87,23 +87,21 @@ You can generalize it, for example:
 // @match https://*/pve/*
 
 
-⚠️ Be careful when broadening the scope — this script is intended for Proxmox VE UI only.
+#### ⚠️ Be careful when broadening the scope — this script is intended for Proxmox VE UI only.
 
 You can target the IP address of your Proxmox instance as specifically as you like.
 
 
-🧪 Tested on
+### 🧪 Tested on
 
 Proxmox VE 8.4.16
-
 Chrome version 143.0.7499.170
-
 Windows 10
 
-📄 License
+### 📄 License
 
 GPL v3 License
 
-🤝 Contributions
+### 🤝 Contributions
 
 Issues, suggestions, and improvements are welcome.
